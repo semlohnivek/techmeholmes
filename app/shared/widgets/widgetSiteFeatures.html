@@ -1,0 +1,14 @@
+<div>
+    <!-- List group -->
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="feature in siteFeatures" ng-click="toggleCollapseValue($index)" style="cursor: pointer">
+            <i class="fa fa-plus-square green"></i>
+            <span>{{feature.title}}</span>
+            <div  class="expand-collapse" style="overflow: hidden; display: none;">
+                <div class="well" style="font-size: .8em; margin-top: 10px;">
+                    {{feature.content}}
+                </div>
+            </div>
+        </li>                
+    </ul>
+</div>

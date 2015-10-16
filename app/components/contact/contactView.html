@@ -1,0 +1,49 @@
+<tmh-widget-top-image image="'moon2.jpg'" text="'Contact'" overlay-text="'Contact'" overlay-style="{'color':'white','background-color': '#888888'}"></tmh-widget-top-image>
+<div class='container'>
+<!--    <div class='row'>
+        <div style="width: 100%; text-align: center; margin-bottom: 20px; font-size: 2em;">
+            <p>Contact Me</p>
+        </div>
+    </div>-->
+    <form class="form-horizontal">
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-8">
+                <label for="inputFirstName" class="contact-label">First Name</label>                
+                <input type="text" class="form-control" id="inputFirstName" name="inputFirstName" ng-model="first" autofocus>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-8">
+                <label for="inputLastName" class="contact-label">Last Name</label> 
+                <input type="text" class="form-control" id="inputLastName" name="inputLastName" ng-model="last">
+            </div>
+        </div>        
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-8">
+                <label for="inputEmail" class="contact-label">Email Address</label> 
+                <input type="email" class="form-control" id="inputEmail" name="inputEmail" ng-model="email">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-8">
+                <label for="inputMessage" class="contact-label">Message</label> 
+                <textarea class="form-control" rows="8" id="inputMessage" name="inputMessage"  ng-model="message"></textarea>
+            </div>
+        </div>    
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-8">
+                <button type="submit" class="btn btn-default" ng-click="submit()" ng-disabled="!ready">
+                    <i ng-class="{fa: true, 'fa-envelope': ready, 'fa-spinner': !ready, 'fa-pulse': !ready}" ></i> Send
+                </button>
+            </div>
+        </div>
+        <div class="form-group" ng-show="showMessageSentAlert">
+            <div class="col-sm-offset-2 col-sm-4">
+                <div class="alert alert-success alert-dismissible" role="alert">
+                    <button type="button" ng-click="showMessageSentAlert = false;" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <span class="glyphicon glyphicon-ok-circle"> </span> Your message was sent. Thank you!
+                </div>
+            </div>
+        </div>        
+    </form>
+</div>
