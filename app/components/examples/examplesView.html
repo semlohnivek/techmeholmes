@@ -1,6 +1,24 @@
 <tmh-widget-top-image image="'lightning_full.jpg'" overlay-text="'About This Site'" overlay-style="{'color':'black', 'background-color': 'white'}"></tmh-widget-top-image>
 <div class='container'>
     <div class="row">
+        <div class="panel panel-default" style="border: 1px solid black;">
+            <div class="panel-body">
+                <h1>Site Overview</h1>
+                <p>This site was built using the Angular.js single page application (SPA) framework. Upon initial display, index.html is loaded along with all
+                    its Javascript dependencies.  As you navigate from page to page, index.html remains as the underlying framework for the page, but the content (html
+                    templates, images, etc...) is loaded dynamically via Ajax calls, all of which is handled by Angular and its routing methods.</p>
+
+                <h2>GitHub <i class="fa fa-github"></i></h2>
+                <p>All of the code for this site can be viewed on GitHub. I develop locally on my home Windows machine but deploy using Git CLI to my Linux web host.
+                    I do my best to always push to GitHub as I develop and pull on my web host for deployment (desperately avoiding the temptation to just FTP directly) so what
+                    you see on GitHub should correspond to what you see on this site.</p>
+                <p><a href="https://github.com/semlohnivek/techmeholmes" target="_blank" >techmeholmes.com on GitHub</a></p>
+            </div>              
+        </div>
+    </div> 
+    <h2><i class="fa fa-code"></i> Code Features</h2>
+    <hr style="border-top: 1px solid #000;">    
+    <div class="row">
         <tmh-widget-site-features></tmh-widget-site-features>
-    </div>
+    </div>    
 </div>

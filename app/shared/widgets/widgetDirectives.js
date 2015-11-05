@@ -32,6 +32,22 @@ angular.module('app.shared.widgets.widgetDirectives', [])
             scope.overlayStyle = {'color':'white'};
         }
     };
+}).directive('tmhWidgetImageBlock', function ($rootScope) {
+    return {
+        restrict: 'E',
+        scope: {
+           info: '='
+        },
+        controller: function($rootScope, $scope) {
+            
+        },        
+        templateUrl: 'app/shared/widgets/widgetImageBlock.html',
+        replace: true,
+        link: function(scope, element, attributes) {
+            //console.log(arguments);
+            //scope.overlayStyle = {'color':'white'};
+        }
+    };
 }).directive('tmhWidgetSiteFeatures', function () {
     return {
         restrict: 'E',

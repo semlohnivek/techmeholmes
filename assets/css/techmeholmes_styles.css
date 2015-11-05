@@ -214,3 +214,7 @@ footer {
     height: 30px;
     margin: 0 5px;
 }
+
+.image-block-panel {
+    background-color: #DCDCDC;
+}
