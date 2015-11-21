@@ -1,10 +1,10 @@
-<div class="row panel image-block-panel">
-    <div class="panel-body">
-    <div class="col-md-8">
-        <img ng-src="{{info.url}}" class="img-responsive img-rounded img-thumbnail">        
-    </div>
-    <div class="col-md-4">
-        <div ng-bind="info.caption" style="margin: 0 0 10px 10px;"></div>
-    </div>    
+<div class="col-sm-6 col-xs-12">
+    <div class="photo" id="divPhoto">
+        <div class="img-thumbnail">
+            <div style="position: relative;">
+                <img ng-src="{{info.url}}" class="img-responsive">
+                <div class="caption" style="border-top: 2px solid black; bottom: 0; display: none; width: 100%; background-color:rgba(0,0,0,0.6); color: white; padding: 15px; position: absolute;" ng-bind="info.caption"></div>
+            </div>
         </div>
+    </div>
 </div>

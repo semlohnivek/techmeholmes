@@ -32,20 +32,24 @@ angular.module('app.shared.widgets.widgetDirectives', [])
             scope.overlayStyle = {'color':'white'};
         }
     };
-}).directive('tmhWidgetImageBlock', function ($rootScope) {
+}).directive('tmhWidgetImageBlock', function ($rootScope, $document) {
     return {
         restrict: 'E',
         scope: {
            info: '='
         },
         controller: function($rootScope, $scope) {
-            
+          $scope.$apply();
         },        
         templateUrl: 'app/shared/widgets/widgetImageBlock.html',
         replace: true,
         link: function(scope, element, attributes) {
-            //console.log(arguments);
-            //scope.overlayStyle = {'color':'white'};
+         
+            element.find('.photo').hover(function() {
+                element.find('.caption').show('slide', {direction: "down"}, 100);
+            },function() {
+                element.find('.caption').hide('slide', {direction: "down"}, 100);
+            });
         }
     };
 }).directive('tmhWidgetSiteFeatures', function () {

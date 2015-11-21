@@ -113,14 +113,14 @@ opacity-100 {
 }
 
 footer {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1rem;
-  background-color: #4A4A4A;
-  text-align: center;
-  color: white;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #4A4A4A;
+    text-align: center;
+    color: white;
 }
 
 .navbar-default .navbar-nav>.active>a, 
@@ -144,10 +144,10 @@ footer {
     width:100%;
 
     position:absolute;
-/*    top:0;
-    left:0;
-    right:0;
-    bottom:0;*/
+    /*    top:0;
+        left:0;
+        right:0;
+        bottom:0;*/
 }
 
 .view-animate.ng-enter {
@@ -217,4 +217,28 @@ footer {
 
 .image-block-panel {
     background-color: #DCDCDC;
+}
+
+@media screen and (min-width: 768px) {
+    .photo {
+        height: 300px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .overview_github {
+        height: 400px;
+    }
+    .photo {
+        height: 370px;
+    }    
+}
+
+@media screen and (min-width: 1200px) {
+    .overview_github {
+        height: 375px;
+    }    
+    .photo {
+        height: 450px;
+    }       
 }

@@ -12,23 +12,23 @@ angular.module('app.components.examples.aboutController', [])
        },
        {
            url: imageRoot + 'el_xfit.jpg',
-           caption: 'The better half and I at a CrossFit competition in Utah.'
+           caption: 'This isn\'t meant to be a shameless plug for CrossFit.  Just a nice picture of the better half and myself. We weren\'t competing btw...just watching.'
        },
        {
            url: imageRoot + 'bolivia_family.JPG',
-           caption: 'My adopted Bolivian family.'
+           caption: 'On top of a small local dam in Tarija, Bolivia with my "adopted" Bolivian family.'
        },       
        {
            url: imageRoot + 'juggling.jpg',
-           caption: 'Nothing relieves stress like a good ax juggling session.'
+           caption: 'Nothing relieves stress like a nice relaxing ax juggling session.'
        },
        {
            url: imageRoot + 'lake.JPG',
-           caption: 'This shot was taken literally seconds before a Chinese guy (that you can barely see on the shore in the background) took off all his clothes and jumped naked into this glacier fed lake.'
+           caption: 'In Torres del Paine National Park, Patagonia, Chile.  Moments after snapping this pic, a naked Chinese man (barely visible in the background) ran naked into this glacier fed lake.'
        },
        {
            url: imageRoot + 'ohsquat.jpg',
-           caption: 'Desperately trying to hang on for one more rep at this team comp.'
+           caption: 'I just like this pic because it makes me look like more of a bad ass than I really am.  Plus the American flag in the background is a nice touch.'
        },
        {
            url: imageRoot + 'race_stands.JPG',
