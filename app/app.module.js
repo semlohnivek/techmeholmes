@@ -18,10 +18,9 @@ var techMeHolmes = angular.module('techMeHolmes', [
 ]);
 
 techMeHolmes.run(['$rootScope', function ($rootScope) {
-//    $rootScope.urlBase = 'http://71.205.59.188:8099/WebServices.aspx'
-//    $rootScope.chartData = {};
+  //    $rootScope.urlBase = 'http://71.205.59.188:8099/WebServices.aspx'
+
         $rootScope.imageRoot = 'assets/img/';
-        //$rootScope.headerImage = 'torres_full2.jpg';
 
         //This is here since we have a static menu
         //Forces the scroll position back to the top of the page

@@ -20,11 +20,11 @@ angular.module('app.components.examples.aboutController', [])
        },       
        {
            url: imageRoot + 'juggling.jpg',
-           caption: 'Nothing relieves stress like a nice relaxing ax juggling session.'
+           caption: 'Nothing relieves stress like a nice ax juggling session.'
        },
        {
            url: imageRoot + 'lake.JPG',
-           caption: 'In Torres del Paine National Park, Patagonia, Chile.  Moments after snapping this pic, a naked Chinese man (barely visible in the background) ran naked into this glacier fed lake.'
+           caption: 'In Torres del Paine National Park, Patagonia, Chile.  Moments after snapping this pic, a harboChinese man (barely visible in the background) ran naked into this glacier fed lake.'
        },
        {
            url: imageRoot + 'ohsquat.jpg',

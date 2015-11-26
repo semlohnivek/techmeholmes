@@ -50,6 +50,10 @@ angular.module('app.shared.widgets.widgetDirectives', [])
             },function() {
                 element.find('.caption').hide('slide', {direction: "down"}, 100);
             });
+            
+            element.find('.photo').click(function() {
+                element.find('.caption').toggle('slide', {direction: "down"}, 100);
+            });            
         }
     };
 }).directive('tmhWidgetSiteFeatures', function () {
@@ -116,6 +120,19 @@ angular.module('app.shared.widgets.widgetDirectives', [])
         link: function(scope, element, attributes) {
             //console.log(arguments);
         }
+    };
+}).directive('tmhWidgetSiteFeature', function () {
+    return {
+        restrict: 'E',
+        scope: {
+            title: '=',
+            content: '='
+        },
+        //controller: function($scope) {},
+        templateUrl: 'app/shared/widgets/widgetSiteFeature.html',
+        replace: true,
+        transclude: true
+        //link: function(scope, element, attributes) {}
     };
 });
 

@@ -20,9 +20,51 @@
             </div>
         </div>        
     </div> 
-    <h2><i class="fa fa-code"></i> Code Features</h2>
-    <hr style="border-top: 1px solid #000;">    
+</div>
+<div class="alert-danger" style="margin: 20px 0 20px 0;" ng-if="false">
+    <div class="container" style="text-align: center;">
+        <h2><i class="fa fa-exclamation-triangle"></i> WARNING <i class="fa fa-exclamation-triangle"></i></h2>
+        <p>
+            Nerd-oriented content ahead! 
+        </p>
+    </div>
+</div>
+<br>
+<div class="container">
     <div class="row">
-        <tmh-widget-site-features></tmh-widget-site-features>
-    </div>    
+        <div class="col-xs-12">
+            <div style="background-color: white; color: black; padding: 10px;">
+                <img  ng-src="{{imageRoot}}/AngularJS-large.png" class="img-responsive" style="height: 100px;">
+                <tmh-widget-site-feature title="'Single Page Application'">
+                    This entire site is built around the Angular.js SPA (Single Page Application) framework.  
+                </tmh-widget-site-feature>
+                <tmh-widget-site-feature title="'Custom Directives'">
+                    The page header and footer, the images blocks (with pop-up captions) on the "About Me" page, even this list
+                    of site features, are all custom directives.  Arguably the most powerful tool within the Angular.js framework,
+                    they make the page markup immensely easier to read as well as promoting code reuse.
+                </tmh-widget-site-feature>
+                <hr>
+                <div>
+                    <img ng-src="{{imageRoot}}/Boostrap_logo.svg.png" class="img-responsive" style="display: inline-block;">
+                    <span style="font-size: 2em;  display: inline-block; vertical-align: bottom;"> Bootstrap</span>
+                </div>
+                <tmh-widget-site-feature title="'Responsive Design'">
+                    The Bootstrap grid system is used to allow this site to expand and contract to nearly any viewport size while
+                    maintaining readability.
+                </tmh-widget-site-feature>
+                <hr>
+                <div>
+                    <img ng-src="{{imageRoot}}/524px-JQuery_logo.svg.png" class="img-responsive" style="display: inline-block; height: 50px;">
+                </div>   
+                <tmh-widget-site-feature title="'DOM maninpulation & effects'">
+                    Though the "Angular way" professes little to no need for direct DOM manipulation or jQuery effects, I tend to disagree
+                    on occasion.  I still find animation effects (such as the caption slide up and down on an image) to be easily
+                    accomplished with jQuery, while the same effect using Angular animation tactics is tedious and overly laborious.
+                </tmh-widget-site-feature>                
+            </div>
+        </div>
+    </div>
+    <!--    <div class="row">
+            <tmh-widget-site-features></tmh-widget-site-features>
+        </div>   -->
 </div>
