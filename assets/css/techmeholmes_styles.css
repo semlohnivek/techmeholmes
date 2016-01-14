@@ -31,7 +31,7 @@ header {
 
 }
 
-opacity-100 {
+.opacity-100 {
     opacity: 1;
 }
 
@@ -166,6 +166,28 @@ footer {
     color: green;
 }
 
+
+.photo_caption {
+    font-size: .8em;
+    border-top: 2px solid black;
+    bottom: -100%;
+    /*display: none;*/
+    width: 100%;
+    background-color:rgba(0,0,0,0.6);
+    color: white;
+    padding: 15px;
+    position: absolute;
+}
+
+.photo_container:hover > .photo_caption {
+     bottom: 0%;
+}
+
+.photo_container:hover > .scale-up {
+     transform: scale(1.1,1.1);
+}
+
+
 /* Fade in/out animations */
 
 @keyframes fadein {
@@ -219,6 +241,10 @@ footer {
     background-color: #DCDCDC;
 }
 
+.photo {
+    overflow: hidden;
+}
+
 @media screen and (min-width: 768px) {
     .photo {
         height: 300px;
@@ -241,4 +267,45 @@ footer {
     .photo {
         height: 450px;
     }       
+}
+
+
+.transition-100 {
+    transition: all .1s;
+    -webkit-transition: all .1s;
+}
+
+.transition-250 {
+    transition: all .25s;
+    -webkit-transition: all .25s;
+}
+
+.transition-500 {
+    transition: all .5s;
+    -webkit-transition: all .5s;
+}
+
+.transition-1000 {
+    transition: all 1s;
+    -webkit-transition: all 1s;
+}
+
+.padding-5 {
+    padding: 5px;
+}
+
+.padding-10 {
+    padding: 10px;
+}
+
+.padding-15 {
+    padding: 15px;
+}
+
+.padding-20 {
+    padding: 20px;
+}
+
+.padding-25 {
+    padding: 25px;
 }

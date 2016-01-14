@@ -1,8 +1,8 @@
 <tmh-widget-top-image image="'lightning_full.jpg'" overlay-text="'About This Site'" overlay-style="{'color':'black', 'background-color': 'white'}"></tmh-widget-top-image>
-<div class='container'>
+<div class="container">
     <div class="row">
         <div class="col-md-8">
-            <div class="overview_github" style="background-color: #2b669a; color: white; padding: 10px;">
+            <div class="overview_github padding-10" style="background-color: #2b669a; color: white;">
                 <h1>Site Overview</h1>
                 <p>This site was built using the Angular.js single page application (SPA) framework. Upon initial display, index.html is loaded along with all
                     its Javascript dependencies.  As you navigate from page to page, index.html remains as the underlying framework for the page, but the content (html
@@ -11,7 +11,7 @@
         </div>
         <div class="col-md-4">
             <div class="visible-xs visible-sm" style="height: 20px"></div>
-            <div class="overview_github" style="background-color: grey; color: white; padding: 10px; font-size: .85em;">
+            <div class="overview_github padding-10" style="background-color: grey; color: white; font-size: .85em;">
                 <h2>GitHub <i class="fa fa-github"></i></h2>
                 <p>All of the code for this site can be viewed on GitHub. I develop locally on my home Windows machine but deploy using Git CLI to my Linux web host.
                     I do my best to always push to GitHub as I develop and pull on my web host for deployment (desperately avoiding the temptation to just FTP directly) so what
@@ -30,11 +30,12 @@
     </div>
 </div>
 <br>
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12">
-            <div style="background-color: white; color: black; padding: 10px;">
+<div class="container padding-25">
+    <div class="row well">
+        <div class="col-md-4">
                 <img  ng-src="{{imageRoot}}/AngularJS-large.png" class="img-responsive" style="height: 100px;">
+        </div>
+        <div class="col-md-8">
                 <tmh-widget-site-feature title="'Single Page Application'">
                     This entire site is built around the Angular.js SPA (Single Page Application) framework.  
                 </tmh-widget-site-feature>
@@ -43,28 +44,32 @@
                     of site features, are all custom directives.  Arguably the most powerful tool within the Angular.js framework,
                     they make the page markup immensely easier to read as well as promoting code reuse.
                 </tmh-widget-site-feature>
-                <hr>
-                <div>
+        </div>
+    </div>
+    <hr>
+    <div class="row well">
+        <div class="col-md-4">
                     <img ng-src="{{imageRoot}}/Boostrap_logo.svg.png" class="img-responsive" style="display: inline-block;">
                     <span style="font-size: 2em;  display: inline-block; vertical-align: bottom;"> Bootstrap</span>
-                </div>
+        </div>
+        <div class="col-md-8">
                 <tmh-widget-site-feature title="'Responsive Design'">
                     The Bootstrap grid system is used to allow this site to expand and contract to nearly any viewport size while
                     maintaining readability.
                 </tmh-widget-site-feature>
-                <hr>
-                <div>
-                    <img ng-src="{{imageRoot}}/524px-JQuery_logo.svg.png" class="img-responsive" style="display: inline-block; height: 50px;">
-                </div>   
-                <tmh-widget-site-feature title="'DOM maninpulation & effects'">
+        </div>
+    </div>
+    <hr>
+    <div class="row well">
+        <div class="col-md-4">
+                <img ng-src="{{imageRoot}}/524px-JQuery_logo.svg.png" class="img-responsive" style="display: inline-block; height: 50px;">
+        </div>
+        <div class="col-md-8">
+                <tmh-widget-site-feature title="'DOM maninpulation &amp; effects'">
                     Though the "Angular way" professes little to no need for direct DOM manipulation or jQuery effects, I tend to disagree
                     on occasion.  I still find animation effects (such as the caption slide up and down on an image) to be easily
                     accomplished with jQuery, while the same effect using Angular animation tactics is tedious and overly laborious.
-                </tmh-widget-site-feature>                
-            </div>
+                </tmh-widget-site-feature>
         </div>
     </div>
-    <!--    <div class="row">
-            <tmh-widget-site-features></tmh-widget-site-features>
-        </div>   -->
 </div>
