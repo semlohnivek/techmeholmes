@@ -187,6 +187,9 @@ footer {
      transform: scale(1.1,1.1);
 }
 
+.resumeBackdrop {
+    background-color: #FFFFF0;
+}
 
 /* Fade in/out animations */
 
@@ -290,6 +293,17 @@ footer {
     -webkit-transition: all 1s;
 }
 
+.modal-backdrop {
+    height: 100%;
+    width: 100%
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+/* Convenience classes for padding */
+
 .padding-5 {
     padding: 5px;
 }
@@ -308,4 +322,58 @@ footer {
 
 .padding-25 {
     padding: 25px;
+}
+
+/* Convenience classes for margins */
+
+/* Top margin */
+.m-t-sm {
+    margin-top: 5px;
+}
+
+.m-t-md {
+    margin-top: 10px;
+}
+
+.m-t-lg {
+    margin-top: 20px;
+}
+
+/* Bottom margin */
+.m-b-sm {
+    margin-bottom: 5px;
+}
+
+.m-b-md {
+    margin-bottom: 10px;
+}
+
+.m-b-lg {
+    margin-bottom: 20px;
+}
+
+/* Left margin */
+.m-l-sm {
+    margin-left: 5px;
+}
+
+.m-l-md {
+    margin-left: 10px;
+}
+
+.m-l-lg {
+    margin-left: 20px;
+}
+
+/* Right margin */
+.m-r-sm {
+    margin-right: 5px;
+}
+
+.m-r-md {
+    margin-right: 10px;
+}
+
+.m-r-lg {
+    margin-right: 20px;
 }

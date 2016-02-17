@@ -39,21 +39,12 @@ angular.module('app.shared.widgets.widgetDirectives', [])
            info: '='
         },
         controller: function($rootScope, $scope) {
-          $scope.$apply();
+
         },        
         templateUrl: 'app/shared/widgets/widgetImageBlock.html',
         replace: true,
         link: function(scope, element, attributes) {
-         
-            // element.find('.photo').hover(function() {
-            //     element.find('.caption').show('slide', {direction: "down"}, 100);
-            // },function() {
-            //     element.find('.caption').hide('slide', {direction: "down"}, 100);
-            // });
-            
-            // element.find('.photo').click(function() {
-            //     element.find('.caption').toggle('slide', {direction: "down"}, 100);
-            // });            
+           
         }
     };
 }).directive('tmhWidgetSiteFeatures', function () {

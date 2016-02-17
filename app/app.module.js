@@ -2,13 +2,12 @@ var techMeHolmes = angular.module('techMeHolmes', [
     'ngRoute',
     'ngAnimate',
     'ngSanitize',
-    'ui.select',
     'ui.bootstrap',
-    'ui.utils',
     //techMeHolmes directives
     'app.shared.header.headerDirective',
     'app.shared.footer.footerDirective',
     'app.shared.widgets.widgetDirectives',
+    'app.shared.resume.resumeCtrl',
     //techMeHolmes controllers
     'app.components.home.homeController',
     'app.components.examples.aboutController',

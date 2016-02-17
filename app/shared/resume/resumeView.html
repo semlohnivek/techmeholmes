@@ -1,0 +1,87 @@
+<style type="text/css">
+    .modal-content {
+    	background-color: #ffffff;
+    }
+	.resume {
+		color: #353535;
+		padding-top: 10px;
+		position: relative;
+		font-size: .8em;
+	}
+	.resume p {
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
+	.resume hr {
+		margin-top: 0px;
+		margin-bottom: 5px;
+	}	
+	.resume .closeButton {
+		position: absolute;
+		top: 15px;
+		right: 20px;
+		opacity: .3;
+		color: #8A4343;
+	}
+	.resume .closeButton:hover {
+			opacity: 1;
+	}
+	.resume .company-name {
+		float: left;
+		font-style: italic;
+	}		
+	.resume .year-range {
+		float: right;
+	}
+	.resume .title {
+		clear: both;
+	}
+	.resume .active-skill-order {
+		font-weight:  bold;
+	}		
+	.resume .inactive-skill-order {
+		font-style: italic;
+		cursor: pointer;
+	}
+	.resume .inactive-skill-order:hover {
+		color: blue;
+	}		
+</style>
+<div class="container-fluid resume">
+	<div ng-click="close()"><i class="fa fa-times closeButton pointer"></i></div>
+	<div class="row">
+		<div class="text-center">
+			<h3><span ng-bind="resume.header.firstName"></span>
+			<span ng-bind="resume.header.lastName"></span>
+			</h3>
+			<p ng-bind="resume.header.phone"></p>
+			<p ng-bind="resume.header.email"></p>
+		</div>
+	</div>
+	<h3 class="pull-left m-r-md">Skills - </h3>
+	<div class="clearfix" style="margin-top: 25px;"> order by: <span ng-click="skillOrder = 'name'" ng-class="{'active-skill-order': skillOrder == 'name', 'inactive-skill-order': skillOrder != 'name'}">skill name</span> | 
+		<span ng-click="skillOrder = '-score'" ng-class="{'active-skill-order': skillOrder == '-score', 'inactive-skill-order': skillOrder != '-score'}">score</span></div>
+	<hr>
+	<div class="row">
+		<div class="col-sm-4" ng-repeat="skill in resume.skills.list | orderBy: skillOrder">
+			<span ng-bind="skill.name"></span>
+			<span ng-bind="skill.score"></span>
+		</div>
+	</div>
+	<br>
+	<h3>Employment History</h3>
+	<hr>
+	<div ng-repeat="employment in resume.employmentHistory">
+		<div class="company-name">
+			<span ng-bind="employment.employer.name"></span>,
+			<span ng-bind="employment.employer.city"></span>,
+			<span ng-bind="employment.employer.state"></span>
+		</div>
+		<div class="year-range">
+			<span ng-bind="employment.from"></span> - <span ng-bind="employment.to"></span>
+		</div>
+		<div class="title" ng-bind="employment.title"></div>		
+	</div>
+	<h3>Activities</h3>
+	<hr>		
+</div>

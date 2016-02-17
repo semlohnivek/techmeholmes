@@ -1,0 +1,55 @@
+{
+	"header": {
+		"firstName": "Kevin",
+		"lastName": "Holmes",
+		"phone": "970.481.0379",
+		"email": "semlohnivek@hotmail.com"
+	},
+	"skills": {
+		"list": [
+		   {
+		   	"name":"AngularJS (1.x)",
+		   	"score": 7
+		   },
+		   {
+		   	"name":"JavaScript",
+		   	"score": 5
+		   },
+		   {
+		   	"name":"Bootstrap 3.x",
+		   	"score": 5
+		   },
+		   {
+		   	"name":"Ruby on Rails",
+		   	"score": 4
+		   },
+		   {
+		   	"name":"Git",
+		   	"score": 5
+		   },
+		   {
+		   	"name":"Perl 5",
+		   	"score": 8
+		   }
+		]
+	},
+	"employmentHistory": [
+	{
+		"title": "Sr. Web Engineer",
+		"employer": {
+			"name": "Visa Inc.",
+			"city": "Highlands Ranch",
+			"state": "CO"
+		},
+		"from": "June 2015",
+		"to": "Present",
+		"summary": "This is a summary of my time at visa at a Sr. Web Engineer.",
+		"highlights": [
+			"highlight 1 and so forth",
+			"another highlight and what not",
+			"and yet another thing to put in this list"
+		]
+	}
+	],
+	"activities": {}
+}
