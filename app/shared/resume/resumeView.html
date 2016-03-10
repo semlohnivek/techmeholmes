@@ -1,87 +1,135 @@
 <style type="text/css">
-    .modal-content {
-    	background-color: #ffffff;
-    }
-	.resume {
-		color: #353535;
-		padding-top: 10px;
-		position: relative;
-		font-size: .8em;
-	}
-	.resume p {
-		margin-top: 0px;
-		margin-bottom: 0px;
-	}
-	.resume hr {
-		margin-top: 0px;
-		margin-bottom: 5px;
-	}	
-	.resume .closeButton {
-		position: absolute;
-		top: 15px;
-		right: 20px;
-		opacity: .3;
-		color: #8A4343;
-	}
-	.resume .closeButton:hover {
-			opacity: 1;
-	}
-	.resume .company-name {
-		float: left;
-		font-style: italic;
-	}		
-	.resume .year-range {
-		float: right;
-	}
-	.resume .title {
-		clear: both;
-	}
-	.resume .active-skill-order {
-		font-weight:  bold;
-	}		
-	.resume .inactive-skill-order {
-		font-style: italic;
-		cursor: pointer;
-	}
-	.resume .inactive-skill-order:hover {
-		color: blue;
-	}		
+.modal-content {
+	background-color: #ffffff;
+}
+.resume {
+	color: #000000;
+	padding-top: 10px;
+	position: relative;
+	font-size: .8em;
+}
+.resume p {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.resume hr {
+	margin-top: 0px;
+	margin-bottom: 5px;
+}	
+.resume .closeButton {
+	position: absolute;
+	top: 15px;
+	right: 20px;
+	opacity: .3;
+	color: #000000;
+}
+.resume .closeButton:hover {
+	opacity: 1;
+	color: #8A4343;
+}
+.resume .company-name {
+	float: left;
+	font-style: italic;
+	font-size: 1.1em;
+	color: #3C2200;
+}		
+.resume .year-range {
+	float: right;
+}
+.resume .title {
+	clear: both;
+	font-weight: 700;
+}
+.resume .active-skill-order {
+	font-weight:  bold;
+}		
+.resume .inactive-skill-order {
+	font-style: italic;
+	cursor: pointer;
+}
+.resume .inactive-skill-order:hover {
+	color: blue;
+}
+.resume #skillsTable thead tr {
+	background-color: rgba(95, 158, 160, 0.58);
+}
+.resume #skillsTable>thead>tr>th {	
+	border-bottom: none;
+}
+.resume #skillsTable tbody tr:hover {
+	background-color: #ffffff;
+}
+.resume .inactive {
+	opacity: .3;
+}
+.resume .section-header {
+	background-color: #525252;
+    color: white;
+	padding: 5px 0 5px 15px;
+}				
 </style>
 <div class="container-fluid resume">
 	<div ng-click="close()"><i class="fa fa-times closeButton pointer"></i></div>
 	<div class="row">
 		<div class="text-center">
 			<h3><span ng-bind="resume.header.firstName"></span>
-			<span ng-bind="resume.header.lastName"></span>
+				<span ng-bind="resume.header.lastName"></span>
 			</h3>
 			<p ng-bind="resume.header.phone"></p>
 			<p ng-bind="resume.header.email"></p>
 		</div>
 	</div>
-	<h3 class="pull-left m-r-md">Skills - </h3>
-	<div class="clearfix" style="margin-top: 25px;"> order by: <span ng-click="skillOrder = 'name'" ng-class="{'active-skill-order': skillOrder == 'name', 'inactive-skill-order': skillOrder != 'name'}">skill name</span> | 
-		<span ng-click="skillOrder = '-score'" ng-class="{'active-skill-order': skillOrder == '-score', 'inactive-skill-order': skillOrder != '-score'}">score</span></div>
-	<hr>
 	<div class="row">
-		<div class="col-sm-4" ng-repeat="skill in resume.skills.list | orderBy: skillOrder">
-			<span ng-bind="skill.name"></span>
-			<span ng-bind="skill.score"></span>
+			<h3 class="section-header">Skills</h3>	
+		<div class="col-xs-12">
+			<table id="skillsTable" class="table table-condensed table-bordered">
+				<thead>
+					<tr>
+						<th width="150" class="pointer" ng-click="skillOrder = (skillOrder == 'name' ? '-name' : 'name')">Name 
+							<i class="fa" ng-class="{'fa-sort-alpha-asc': skillOrder == 'name', 'fa-sort-alpha-desc': skillOrder == '-name', 'fa-sort-alpha-asc inactive': skillOrder.indexOf('name') == -1}"></i>
+						</th>
+						<th width="150" class="pointer" ng-click="skillOrder = (skillOrder == 'score' ? '-score' : 'score')">Competency
+							<i class="fa" ng-class="{'fa-sort-amount-asc': skillOrder == 'score', 'fa-sort-amount-desc': skillOrder == '-score', 'fa-sort-amount-asc inactive': skillOrder.indexOf('score') == -1}"></i>
+						</th>
+						<th class="hidden-xs">Details</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="skill in resume.skills.list | orderBy: skillOrder">
+						<td ng-bind="skill.name"></td>
+						<td ng-bind="resume.skills.scoreMap[skill.score]"></td>
+						<td class="hidden-xs" ng-bind="skill.details"></td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 	</div>
-	<br>
-	<h3>Employment History</h3>
-	<hr>
-	<div ng-repeat="employment in resume.employmentHistory">
-		<div class="company-name">
-			<span ng-bind="employment.employer.name"></span>,
-			<span ng-bind="employment.employer.city"></span>,
-			<span ng-bind="employment.employer.state"></span>
+	<div class="row">
+			<h3 class="section-header">Employment History</h3>
+		<div class="col-xs-12">
+			<hr>
+			<div ng-repeat="employment in resume.employmentHistory" class="m-b-lg">
+				<div class="company-name">
+					<span ng-bind="employment.employer.name"></span>,
+					<span ng-bind="employment.employer.city"></span>,
+					<span ng-bind="employment.employer.state"></span>
+				</div>
+				<div class="year-range hidden-xs">
+					<span ng-bind="employment.from"></span> - <span ng-bind="employment.to"></span>
+				</div>
+				<div class="title" ng-bind="employment.title"></div>
+				<p ng-bind="employment.summary"></p>
+				<ul>
+					<li ng-repeat="highlight in employment.highlights" ng-bind="highlight"></li>
+				</ul>
+			</div>
 		</div>
-		<div class="year-range">
-			<span ng-bind="employment.from"></span> - <span ng-bind="employment.to"></span>
-		</div>
-		<div class="title" ng-bind="employment.title"></div>		
 	</div>
-	<h3>Activities</h3>
-	<hr>		
+
+	<div class="row">
+			<h3 class="section-header">Activities</h3>
+		<div class="col-xs-12">
+			<hr>	
+		</div>	
+	</div>
 </div>

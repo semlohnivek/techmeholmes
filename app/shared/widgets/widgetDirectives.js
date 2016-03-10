@@ -29,7 +29,6 @@ angular.module('app.shared.widgets.widgetDirectives', [])
         replace: true,
         link: function(scope, element, attributes) {
             //console.log(arguments);
-            scope.overlayStyle = {'color':'white'};
         }
     };
 }).directive('tmhWidgetImageBlock', function ($rootScope, $document) {

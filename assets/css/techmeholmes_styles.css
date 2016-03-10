@@ -9,7 +9,7 @@ and open the template in the editor.
 */
 
 body {
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 2em;
     position: relative;
     min-height: 100%;
@@ -187,9 +187,6 @@ footer {
      transform: scale(1.1,1.1);
 }
 
-.resumeBackdrop {
-    background-color: #FFFFF0;
-}
 
 /* Fade in/out animations */
 

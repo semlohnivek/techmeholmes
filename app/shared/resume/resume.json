@@ -9,47 +9,92 @@
 		"list": [
 		   {
 		   	"name":"AngularJS (1.x)",
-		   	"score": 7
+		   	"score": 3,
+		   	"details": "Worked on four different medium-scale AngularJS applications in the past 3 years.  Comfortable standing up Angular applications from scratch and have a firm grasp of MVC concepts and Angular concepts - directives, serivces, modules, resources, etc.."
 		   },
 		   {
 		   	"name":"JavaScript",
-		   	"score": 5
+		   	"score": 3,
+		   	"details": ""
 		   },
 		   {
 		   	"name":"Bootstrap 3.x",
-		   	"score": 5
+		   	"score": 2,
+		   	"details": ""
 		   },
 		   {
 		   	"name":"Ruby on Rails",
-		   	"score": 4
+		   	"score": 2,
+		   	"details": ""
 		   },
 		   {
 		   	"name":"Git",
-		   	"score": 5
+		   	"score": 2,
+		   	"details": ""
 		   },
 		   {
 		   	"name":"Perl 5",
-		   	"score": 8
+		   	"score": 3,
+		   	"details": ""
 		   }
 		]
+		,
+		"scoreMap": {
+			"1": "Novice",
+			"2": "Intermediate",
+			"3": "Advanced",
+			"4": "Expert"
+		}
 	},
 	"employmentHistory": [
-	{
-		"title": "Sr. Web Engineer",
-		"employer": {
-			"name": "Visa Inc.",
-			"city": "Highlands Ranch",
-			"state": "CO"
+		{
+			"title": "Sr. Web Engineer",
+			"employer": {
+				"name": "Visa Inc.",
+				"city": "Highlands Ranch",
+				"state": "CO"
+			},
+			"from": "August 2015",
+			"to": "Present",
+			"summary": "This is a summary of my time at visa at a Sr. Web Engineer.",
+			"highlights": [
+				"highlight 1 and so forth",
+				"another highlight and what not",
+				"and yet another thing to put in this list"
+			]
 		},
-		"from": "June 2015",
-		"to": "Present",
-		"summary": "This is a summary of my time at visa at a Sr. Web Engineer.",
-		"highlights": [
-			"highlight 1 and so forth",
-			"another highlight and what not",
-			"and yet another thing to put in this list"
-		]
-	}
+		{
+			"title": "Contractor / Web Developer",
+			"employer": {
+				"name": "Consultant Specialists Inc.",
+				"city": "Highlands Ranch",
+				"state": "CO"
+			},
+			"from": "March 2014",
+			"to": "July 2015",
+			"summary": "This is a summary of my time at visa at a Sr. Web Engineer.",
+			"highlights": [
+				"highlight 1 and so forth",
+				"another highlight and what not",
+				"and yet another thing to put in this list"
+			]
+		},
+		{
+			"title": "Sr. Web Engineer",
+			"employer": {
+				"name": "Visa Inc.",
+				"city": "Highlands Ranch",
+				"state": "CO"
+			},
+			"from": "June 2015",
+			"to": "Present",
+			"summary": "This is a summary of my time at visa at a Sr. Web Engineer.",
+			"highlights": [
+				"highlight 1 and so forth",
+				"another highlight and what not",
+				"and yet another thing to put in this list"
+			]
+		}				
 	],
 	"activities": {}
 }
