@@ -56,11 +56,12 @@
 			},
 			"from": "August 2015",
 			"to": "Present",
-			"summary": "This is a summary of my time at visa at a Sr. Web Engineer.",
+			"summary": "Mix of full-stack and strict front-end web development using AngularJS, Ruby on Rails, and MySQL for three different medium-scale internal web applications.",
 			"highlights": [
-				"highlight 1 and so forth",
-				"another highlight and what not",
-				"and yet another thing to put in this list"
+				"Heavy use of open source JavaScript libraries including: AngularJS, jQuery, Angular UI, UI Router, ",
+				"Built responsive and consistent UI layouts using Bootstrap and Bootstrap-based themes such as SmartAdmin and Inspinia.",
+				"Developed RESTful API using Ruby on Rails, consumed on the front-end [mostly] using AngularJS Resource objects.",
+				"Agile development model using Git, Stash/Bitbucket, and Jira.  Most releases based on 2-3 week sprints."
 			]
 		},
 		{
@@ -72,29 +73,36 @@
 			},
 			"from": "March 2014",
 			"to": "July 2015",
-			"summary": "This is a summary of my time at visa at a Sr. Web Engineer.",
+			"summary": "Initially contracted with Visa Prepaid developing web services written in C# using XML payloads. Latter 10 months, moved to full-stack AngularJS, Ruby on Rails, and MySQL web application.",
 			"highlights": [
-				"highlight 1 and so forth",
-				"another highlight and what not",
-				"and yet another thing to put in this list"
+				"Learned AngularJS and Ruby on Rails on the job.  Became proficient in both within a month.",
+				"Began using tools such as Git, Stash, and Jira in an Agile based development project."
 			]
 		},
 		{
-			"title": "Sr. Web Engineer",
+			"title": "Sr. Systems Administrator",
 			"employer": {
 				"name": "Visa Inc.",
 				"city": "Highlands Ranch",
 				"state": "CO"
 			},
-			"from": "June 2015",
-			"to": "Present",
-			"summary": "This is a summary of my time at visa at a Sr. Web Engineer.",
+			"from": "June 2004",
+			"to": "November 2012",
+			"summary": "Lead the Windows automation team for Visa’s operations department. Administered the source code repositories and defect tracking systems for Visa’s software development teams using IBM/Rational ClearCase and ClearQuest.",
 			"highlights": [
-				"highlight 1 and so forth",
-				"another highlight and what not",
-				"and yet another thing to put in this list"
+				"Wrote server-side automation scripts using Perl, C# and Java – Some driven by the server scheduler, others driven by HPOO.",
+				"Specialized in system monitoring and data gathering to provide usage metrics for servers and applications.",
+				"Automated solutions allowed for over 50% of all help desk tickets to be completed automatically without human intervention."
 			]
 		}				
 	],
-	"activities": {}
+	"activities": [
+		{
+			"title": "Volunteer Mentor",
+			"organization": "American Corporate Partners (ACP)",
+			"from": "January 2016",
+			"to": "Present",
+			"summary": "ACP is a service organization \"Connecting US Veterans to Business Leaders through Mentorships and Online Career Advice.\""
+		}
+	]
 }
