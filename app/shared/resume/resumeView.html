@@ -15,7 +15,7 @@
 .resume hr {
 	margin-top: 0px;
 	margin-bottom: 5px;
-}	
+	}
 .resume .closeButton {
 	position: absolute;
 	top: 15px;
@@ -32,7 +32,7 @@
 	font-style: italic;
 	font-size: 1.1em;
 	color: #3C2200;
-}		
+		}
 .resume .year-range {
 	float: right;
 	font-weight: bold;
@@ -44,7 +44,7 @@
 }
 .resume .active-skill-order {
 	font-weight:  bold;
-}		
+		}
 .resume .inactive-skill-order {
 	font-style: italic;
 	cursor: pointer;
@@ -55,11 +55,8 @@
 .resume #skillsTable thead tr {
 	background-color: rgba(95, 158, 160, 0.58);
 }
-.resume #skillsTable>thead>tr>th {	
+	.resume #skillsTable>thead>tr>th {
 	border-bottom: none;
-}
-.resume #skillsTable tbody tr:hover {
-	background-color: #ffffff;
 }
 .resume .inactive {
 	opacity: .3;
@@ -69,7 +66,8 @@
 	padding-bottom: 10px;
 }
 .resume .employment-section:hover {
-	background-color: rgba(162, 198, 200, 0.5);
+	/*background-color: rgba(162, 198, 200, 0.25);*/
+	background-color: #F5F5F5;
 }
 .resume .section-header {
 	background-color: #525252;
@@ -86,92 +84,120 @@
 	color: #286090;
 	background-color: white;
 	border-color: #286090;
-
+}
+.resume .smaller {
+	font-size: .9em;
+}
+.resume .gap {
+	margin-top: 20px;
 }
 </style>
-<div class="container-fluid resume">
-	
-	<div ng-click="close()"><i class="fa fa-times closeButton pointer"></i></div>
-	
-	<div class="row">
-		<div class="text-center">
-			<h3><span ng-bind="resume.header.firstName"></span>
+<div id="resumeDiv">
+	<div class="container-fluid resume">
+		
+		<div ng-click="close()"><i class="fa fa-times closeButton pointer"></i></div>
+		
+		<div class="row">
+			<div class="text-center">
+				<h3><span ng-bind="resume.header.firstName"></span>
 				<span ng-bind="resume.header.lastName"></span>
-			</h3>
-			<p ng-bind="resume.header.phone"></p>
-			<p ng-bind="resume.header.email"></p>
+				</h3>
+				<p ng-bind="resume.header.phone"></p>
+				<p ng-bind="resume.header.email"></p>
+			</div>
+		</div>
+		<div class="row">
+			<h3 class="section-header">Core Competencies</h3>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<table id="skillsTable" class="table table-condensed table-bordered table-hover smaller">
+					<thead>
+						<tr>
+							<th width="180" class="pointer" ng-click="skillOrder = (skillOrder == 'name' ? '-name' : 'name')">Skill
+								<i class="fa" ng-class="{'fa-sort-alpha-asc': skillOrder == 'name', 'fa-sort-alpha-desc': skillOrder == '-name', 'fa-sort-alpha-asc inactive': skillOrder.indexOf('name') == -1}"></i>
+							</th>
+							<th width="100" class="pointer" ng-click="skillOrder = (skillOrder == 'score' ? '-score' : 'score')">Level
+								<i class="fa" ng-class="{'fa-sort-amount-asc': skillOrder == 'score', 'fa-sort-amount-desc': skillOrder == '-score', 'fa-sort-amount-asc inactive': skillOrder.indexOf('score') == -1}"></i>
+							</th>
+							<th class="hidden-xs">Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="skill in resume.skills.list | orderBy: skillOrder">
+							<td ng-bind="skill.name"></td>
+							<td ng-bind="resume.skills.scoreMap[skill.score]" class="smaller"></td>
+							<td class="hidden-xs smaller" ng-bind="skill.details"></td>
+						</tr>
+					</tbody>
+				</table>
+				
+				<h4>Honorable Mentions</h4>
+				<span ng-repeat="bSkill in resume.skills.others track by $index">{{bSkill}}<span ng-if="!$last">, </span></span>
+
+				<h4 class="gap">Spoken Languages</h4>
+				<span ng-repeat="spoken in resume.skills.spoken track by $index">{{spoken.language}} - <span class="smaller">{{spoken.level}}</span><span ng-if="!$last">, </span></span>
+			</div>
+		</div>
+		<div class="row">
+			<h3 class="section-header">Employment History</h3>
+		</div>
+		<div ng-repeat="employment in resume.employmentHistory" class="row employment-section">
+			<div class="col-xs-12">
+				<div class="company-name">
+					<span ng-bind="employment.employer.name"></span>,
+					<span ng-bind="employment.employer.city"></span>,
+					<span ng-bind="employment.employer.state"></span>
+				</div>
+				<div class="year-range hidden-xs">
+					<span ng-bind="employment.from"></span> - <span ng-bind="employment.to"></span>
+				</div>
+				<div class="title" ng-bind="employment.title"></div>
+				<p ng-bind="employment.summary"></p>
+				<ul class="highlight-list">
+					<li ng-repeat="highlight in employment.highlights" ng-bind="highlight"></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<h3 class="section-header">Activities</h3>
+		</div>
+		<div ng-repeat="activity in resume.activities" class="row employment-section">
+			<div class="col-xs-12">
+				<div class="company-name">
+					<span ng-bind="activity.organization"></span>
+				</div>
+				<div class="year-range hidden-xs">
+					<span ng-bind="activity.from"></span> - <span ng-bind="activity.to"></span>
+				</div>
+				<div class="title" ng-bind="activity.title"></div>
+				<p ng-bind="activity.summary"></p>
+			</div>
+		</div>
+		<div class="row m-t-lg m-b-lg no-print">
+			<div class="col-xs-12">
+				<button class="btn btn-primary pull-right" onclick="printPage()"><i class="fa fa-print"></i> Print</button>
+			</div>
 		</div>
 	</div>
-
-	<div class="row">
-		<h3 class="section-header">Skills</h3>	
-	</div>
-	<div class="row">
-		<div class="col-xs-12">
-			<table id="skillsTable" class="table table-condensed table-bordered">
-				<thead>
-					<tr>
-						<th width="150" class="pointer" ng-click="skillOrder = (skillOrder == 'name' ? '-name' : 'name')">Name 
-							<i class="fa" ng-class="{'fa-sort-alpha-asc': skillOrder == 'name', 'fa-sort-alpha-desc': skillOrder == '-name', 'fa-sort-alpha-asc inactive': skillOrder.indexOf('name') == -1}"></i>
-						</th>
-						<th width="150" class="pointer" ng-click="skillOrder = (skillOrder == 'score' ? '-score' : 'score')">Competency
-							<i class="fa" ng-class="{'fa-sort-amount-asc': skillOrder == 'score', 'fa-sort-amount-desc': skillOrder == '-score', 'fa-sort-amount-asc inactive': skillOrder.indexOf('score') == -1}"></i>
-						</th>
-						<th class="hidden-xs">Details</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr ng-repeat="skill in resume.skills.list | orderBy: skillOrder">
-						<td ng-bind="skill.name"></td>
-						<td ng-bind="resume.skills.scoreMap[skill.score]"></td>
-						<td class="hidden-xs" ng-bind="skill.details"></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
-
-	<div class="row">
-		<h3 class="section-header">Employment History</h3>
-	</div>
-	<div ng-repeat="employment in resume.employmentHistory" class="row employment-section">
-		<div class="col-xs-12">
-			<div class="company-name">
-				<span ng-bind="employment.employer.name"></span>,
-				<span ng-bind="employment.employer.city"></span>,
-				<span ng-bind="employment.employer.state"></span>
-			</div>
-			<div class="year-range hidden-xs">
-				<span ng-bind="employment.from"></span> - <span ng-bind="employment.to"></span>
-			</div>
-			<div class="title" ng-bind="employment.title"></div>
-			<p ng-bind="employment.summary"></p>
-			<ul class="highlight-list">
-				<li ng-repeat="highlight in employment.highlights" ng-bind="highlight"></li>
-			</ul>
-		</div>
-	</div>
-
-	<div class="row">
-		<h3 class="section-header">Activities</h3>
-	</div>
-	<div ng-repeat="activity in resume.activities" class="row employment-section">
-		<div class="col-xs-12">
-			<div class="company-name">
-				<span ng-bind="activity.organization"></span>
-			</div>
-			<div class="year-range hidden-xs">
-				<span ng-bind="activity.from"></span> - <span ng-bind="activity.to"></span>
-			</div>
-			<div class="title" ng-bind="activity.title"></div>
-			<p ng-bind="activity.summary"></p>
-		</div>
-	</div>
-
-	<div class="row m-t-lg m-b-lg">
-		<div class="col-xs-12">
-		<button class="btn btn-primary pull-right"><i class="fa fa-print"></i> Print</button>
-	</div>
-	</div>
-
 </div>
+<script type="text/javascript">
+function printPage()
+{
+		var divToPrint = document.getElementById('resumeDiv');
+		var newWin = window.open();
+newWin.document.write('<html><head><title>Kevin Holmes Résumé</title>');
+	//newWin.document.write('<link rel="stylesheet" href="/app/shared/resume/resume.css" type="text/css" />');
+	newWin.document.write('<style> @media print {  .resume .no-print { visibility: hidden;  }  } .resume { font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif; } .resume .text-center { text-align: center; } .resume {color: #000000;padding-top: 10px;position: relative;font-size: .8em;} .resume p {margin-top: 0px;margin-bottom: 0px;} .resume hr {margin-top: 0px;margin-bottom: 5px;} .resume .closeButton {position: absolute;top: 15px;right: 20px;opacity: .3;color: #000000;} .resume .company-name {float: left;font-style: italic;font-size: 1.1em;color: #3C2200;} .resume .year-range {float: right;font-weight: bold;color: #888888;} .resume .title {clear: both;font-weight: 700;} .resume .active-skill-order {font-weight: bold;} .resume .inactive-skill-order {font-style: italic;cursor: pointer;} .resume #skillsTable thead tr {background-color: rgba(95, 158, 160, 0.58);} .resume #skillsTable>thead>tr>th {border-bottom: none;} .resume .inactive {opacity: .3;} .resume .employment-section {padding-top:10px;padding-bottom: 10px;} .resume .section-header {margin: 15px 0 0 0; background-color: #525252;  color: white;padding: 5px 0 5px 15px;} .resume .highlight-list {font-size: .95em;} .resume .btn-primary {transition: all .2s;} .resume .smaller {font-size: .9em;} .resume h3 {margin: 3px;} .resume h4 {margin-bottom: 3px;} .table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {    padding: 8px;    line-height: 1.42857143;    vertical-align: top;    border-top: 1px solid #ddd;} .table-condensed>thead>tr>th, .table-condensed>tbody>tr>th, .table-condensed>tfoot>tr>th, .table-condensed>thead>tr>td, .table-condensed>tbody>tr>td, .table-condensed>tfoot>tr>td {    padding: 5px;} .resume .gap { margin-top: 20px; }</style>');
+
+
+newWin.document.write('</head><body >');
+newWin.document.write(divToPrint.innerHTML);
+newWin.document.write('</body></html>');
+newWin.document.close(); // necessary for IE >= 10
+newWin.focus(); // necessary for IE >= 10
+newWin.print();
+newWin.close();
+return true;
+}
+</script>
