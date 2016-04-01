@@ -3,7 +3,11 @@
 		"firstName": "Kevin",
 		"lastName": "Holmes",
 		"phone": "970.481.0379",
-		"email": "semlohnivek@hotmail.com"
+		"email": "semlohnivek@hotmail.com",
+		"website": {
+			"url": "http://www.techmeholmes.com",
+			"title": "www.techmeholmes.com"
+		}
 	},
 	"skills": {
 		"list": [
