@@ -11,7 +11,7 @@ angular.module('app.components.examples.contactController', [])
                     $scope.showMessageSentAlert = false;
                     $scope.ready = false;
 
-                    Email.send($scope.first, $scope.last, $scope.email, $scope.message)
+                    Email.send($scope.formData.first, $scope.formData.last, $scope.formData.email, $scope.formData.message)
                     .then(function (response) {
                         $scope.contactForm.$setPristine();
                         $scope.contactForm.$setUntouched();
