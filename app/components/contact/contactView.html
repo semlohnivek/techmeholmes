@@ -38,7 +38,7 @@
         </div>    
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-8">
-                <button type="submit" class="btn btn-primary" ng-click="submit()" ng-disabled="!contactForm.$valid">
+                <button type="submit" class="btn btn-primary" ng-click="submit()" ng-disabled="!contactForm.$valid || !ready">
                     <i ng-class="{fa: true, 'fa-envelope': ready, 'fa-spinner': !ready, 'fa-pulse': !ready}" ></i> Send
                 </button>
             </div>
