@@ -1,27 +1,26 @@
 angular.module('app.components.examples.contactController', [])
-        .controller('contactController', ['$rootScope','$scope', 'Email', 'ModalMessage', function ($rootScope, $scope, Email, ModalMessage) {
+        .controller('contactController', ['$rootScope','$scope', 'Email', 'ModalMessage', '$timeout', function ($rootScope, $scope, Email, ModalMessage, $timeout) {
 
                 $scope.hello = "Hello from the contact controller";
                 $scope.showMessageSentAlert = false;
                 $scope.ready = true;
 
+                $scope.formData = {};
+
                 $scope.submit = function () {
                     $scope.showMessageSentAlert = false;
                     $scope.ready = false;
-                    //ModalMessage.show('<i class="fa fa-spinner fa-pulse"></i>');
+
                     Email.send($scope.first, $scope.last, $scope.email, $scope.message)
                     .then(function (response) {
+                        $scope.contactForm.$setPristine();
+                        $scope.contactForm.$setUntouched();
                         $scope.ready = true;
-                        //alert(response);
-                        ModalMessage.hide();
                         $scope.showMessageSentAlert = true;
-                        $scope.first = '';
-                        $scope.last = '';
-                        $scope.email = '';
-                        $scope.message = '';
+                        $scope.formData = {};   
                     });
-                };
 
+               };
 
             }]);
 

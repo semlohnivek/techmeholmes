@@ -374,3 +374,12 @@ footer {
 .m-r-lg {
     margin-right: 20px;
 }
+
+.btn-primary {
+    transition: all .2s;
+}
+.btn-primary:hover {
+    color: #286090;
+    background-color: white;
+    border-color: #286090;
+}
