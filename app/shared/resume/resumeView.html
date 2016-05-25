@@ -27,12 +27,22 @@
 	opacity: 1;
 	color: #8A4343;
 }
+.resume .skill-header {
+	font-style: italic;
+	font-size: 1.1em;
+	color: #3C2200;
+}
 .resume .company-name {
 	float: left;
 	font-style: italic;
 	font-size: 1.1em;
 	color: #3C2200;
-		}
+}
+.resume .school-name {
+	font-style: italic;
+	font-size: 1.1em;
+	color: #3C2200;
+}
 .resume .year-range {
 	float: right;
 	font-weight: bold;
@@ -102,35 +112,11 @@
 		<div class="row">
 			<h3 class="section-header">Core Competencies</h3>
 		</div>
-		<div class="row">
+		<div class="row employment-section" ng-repeat="skillGroup in resume.skills">
 			<div class="col-xs-12">
-				<table id="skillsTable" class="table table-condensed table-bordered table-hover smaller">
-					<thead>
-						<tr>
-							<th width="180" class="pointer" ng-click="skillOrder = (skillOrder == 'name' ? '-name' : 'name')">Skill
-								<i class="fa" ng-class="{'fa-sort-alpha-asc': skillOrder == 'name', 'fa-sort-alpha-desc': skillOrder == '-name', 'fa-sort-alpha-asc inactive': skillOrder.indexOf('name') == -1}"></i>
-							</th>
-							<th width="100" class="pointer" ng-click="skillOrder = (skillOrder == 'score' ? '-score' : 'score')">Level
-								<i class="fa" ng-class="{'fa-sort-amount-asc': skillOrder == 'score', 'fa-sort-amount-desc': skillOrder == '-score', 'fa-sort-amount-asc inactive': skillOrder.indexOf('score') == -1}"></i>
-							</th>
-							<th class="hidden-xs">Details</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr ng-repeat="skill in resume.skills.list | orderBy: skillOrder">
-							<td ng-bind="skill.name"></td>
-							<td ng-bind="resume.skills.scoreMap[skill.score]" class="smaller"></td>
-							<td class="hidden-xs smaller" ng-bind="skill.details"></td>
-						</tr>
-					</tbody>
-				</table>
-				
-				<h4>Honorable Mentions</h4>
-				<span ng-repeat="bSkill in resume.skills.others track by $index">{{bSkill}}<span ng-if="!$last">, </span></span>
-
-				<h4 class="gap">Spoken Languages</h4>
-				<span ng-repeat="spoken in resume.skills.spoken track by $index">{{spoken.language}} - <span class="smaller">{{spoken.level}}</span><span ng-if="!$last">, </span></span>
-			</div>
+			<div class="skill-header">{{skillGroup.title}}</div>
+			<span ng-repeat="skill in skillGroup.list track by $index">{{skill}}<span ng-if="!$last">, </span></span>
+			</div>			
 		</div>
 		<div class="row">
 			<h3 class="section-header">Employment History</h3>
@@ -150,6 +136,22 @@
 				<ul class="highlight-list">
 					<li ng-repeat="highlight in employment.highlights" ng-bind="highlight"></li>
 				</ul>
+			</div>
+		</div>
+
+		<div class="row">
+			<h3 class="section-header">Education</h3>
+		</div>
+		<div ng-repeat="school in resume.education" class="row employment-section">
+			<div class="col-xs-12">
+				<div class="school-name">
+					<span ng-bind="school.name"></span>,
+					<span ng-bind="school.location"></span>
+				</div>
+				<div ng-repeat="degree in school.degrees">
+				    <span class="title" ng-bind="degree.type"></span> - 
+				    <span ng-bind="degree.major"></span>				
+				</div>
 			</div>
 		</div>
 		<div class="row">
@@ -181,7 +183,7 @@ function printPage()
 		var newWin = window.open();
 newWin.document.write('<html><head><title>Kevin Holmes Résumé</title>');
 	//newWin.document.write('<link rel="stylesheet" href="/app/shared/resume/resume.css" type="text/css" />');
-	newWin.document.write('<style> @media print {  .resume .no-print { visibility: hidden;  }  } .resume { font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif; } .resume .text-center { text-align: center; } .resume {color: #000000;padding-top: 10px;position: relative;font-size: .8em;} .resume p {margin-top: 0px;margin-bottom: 0px;} .resume hr {margin-top: 0px;margin-bottom: 5px;} .resume .closeButton {position: absolute;top: 15px;right: 20px;opacity: .3;color: #000000;} .resume .company-name {float: left;font-style: italic;font-size: 1.1em;color: #3C2200;} .resume .year-range {float: right;font-weight: bold;color: #888888;} .resume .title {clear: both;font-weight: 700;} .resume .active-skill-order {font-weight: bold;} .resume .inactive-skill-order {font-style: italic;cursor: pointer;} .resume #skillsTable thead tr {background-color: rgba(95, 158, 160, 0.58);} .resume #skillsTable>thead>tr>th {border-bottom: none;} .resume .inactive {opacity: .3;} .resume .employment-section {padding-top:10px;padding-bottom: 10px;} .resume .section-header {margin: 25px 0 0 0; background-color: #525252;  color: white;padding: 5px 0 5px 15px;} .resume .highlight-list {font-size: .95em;} .resume .btn-primary {transition: all .2s;} .resume .smaller {font-size: .9em;} .resume h3 {margin: 3px;} .resume h4 {margin-bottom: 3px;} .table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {    padding: 8px;    line-height: 1.42857143;    vertical-align: top;    border-top: 1px solid #ddd;} .table-condensed>thead>tr>th, .table-condensed>tbody>tr>th, .table-condensed>tfoot>tr>th, .table-condensed>thead>tr>td, .table-condensed>tbody>tr>td, .table-condensed>tfoot>tr>td {    padding: 5px;} .resume .gap { margin-top: 20px; }</style>');
+	newWin.document.write('<style> @media print {  .resume .no-print { visibility: hidden;  }  } .resume { font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif; } .resume .text-center { text-align: center; } .resume {color: #000000;padding-top: 10px;position: relative;font-size: .8em;} .resume p {margin-top: 0px;margin-bottom: 0px;} .resume hr {margin-top: 0px;margin-bottom: 5px;} .resume .closeButton {position: absolute;top: 15px;right: 20px;opacity: .3;color: #000000;} .resume .company-name {float: left;font-style: italic;font-size: 1.1em;color: #3C2200;} .resume .year-range {float: right;font-weight: bold;color: #888888;} .resume .title {clear: both;font-weight: 700;} .resume .active-skill-order {font-weight: bold;} .resume .inactive-skill-order {font-style: italic;cursor: pointer;} .resume #skillsTable thead tr {background-color: rgba(95, 158, 160, 0.58);} .resume #skillsTable>thead>tr>th {border-bottom: none;} .resume .inactive {opacity: .3;} .resume .employment-section {padding-top:10px;padding-bottom: 10px;} .resume .section-header {margin: 25px 0 0 0; background-color: #525252;  color: white;padding: 5px 0 5px 15px;} .resume .highlight-list {font-size: .95em;} .resume .btn-primary {transition: all .2s;} .resume .smaller {font-size: .9em;} .resume h3 {margin: 3px;} .resume .school-name {font-style: italic; font-size: 1.1em; color: #3C2200;} .resume h4 {margin-bottom: 3px;} .table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {    padding: 8px;    line-height: 1.42857143;    vertical-align: top;    border-top: 1px solid #ddd;} .table-condensed>thead>tr>th, .table-condensed>tbody>tr>th, .table-condensed>tfoot>tr>th, .table-condensed>thead>tr>td, .table-condensed>tbody>tr>td, .table-condensed>tfoot>tr>td {    padding: 5px;} .resume .gap { margin-top: 20px; }</style>');
 
 
 newWin.document.write('</head><body >');

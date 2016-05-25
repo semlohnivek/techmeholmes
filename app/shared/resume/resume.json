@@ -9,77 +9,28 @@
 			"title": "www.techmeholmes.com"
 		}
 	},
-	"skills": {
-		"list": [
-		   {
-		   	"name":"AngularJS (1.x)",
-		   	"score": 3,
-		   	"details": "Strong working knowledge of Angular.js and its core ideas - Single Page Application (SPA) framework, two-way data binding, Model-View-Whatever (MVW) paradigm."
-		   },
-		   {
-		   	"name":"RESTful API Development",
-		   	"score": 2,
-		   	"details": "Helped build several RESTful APIs predominately with Ruby on Rails, though some minimal experience with Node.js"
-		   },
-		   {
-		   	"name":"HTML5 & CSS3",
-		   	"score": 2,
-		   	"details": "Used extensively and generally competent, but still have days where nothing seems to line up right."
-		   },		   
-		   {
-		   	"name":"Node.js",
-		   	"score": 1,
-		   	"details": "Mostly personal, home-based project experience.  But learning quickly and really enjoy using Node's rapid development capabilities."
-		   },		   		   
-		   {
-		   	"name":"JavaScript",
-		   	"score": 3,
-		   	"details": "Certainly competent, but not a JS ninja."
-		   },
-		   {
-		   	"name":"Bootstrap 3.x",
-		   	"score": 2,
-		   	"details": "Loved or hated, Bootstrap helps us graphically-challenged developers make things look pretty."
-		   },
-		   {
-		   	"name":"Ruby on Rails",
-		   	"score": 2,
-		   	"details": "Written a fair amount of Ruby code in the Rails framework and have experience with gem installation, Rake, ActiveRecord, routes, etc...  But still plenty to learn."
-		   },
-		   {
-		   	"name":"Git",
-		   	"score": 2,
-		   	"details": "Comfortable with general Git usage including branching, merging, pull requests, etc...  Not an expert, but with Google's help generally able to solve any Git task."
-		   },
-		   {
-		   	"name":"Perl 5",
-		   	"score": 3,
-		   	"details": "One of my favorite languages.  Roughly five years of experience spent writing Perl 5 scripts for both Windows and Unix/Linux systems."
-		   }
-		]
-		,
-		"scoreMap": {
-			"1": "Novice",
-			"2": "Intermediate",
-			"3": "Advanced",
-			"4": "Expert"
-		},
-		"others": ["MySQL", "Highcharts and HighStock", "Apache", "IIS", "MongoDB", "D3 Visualization Library"],
-		"spoken": [
-		   {
-		   	  "language": "English",
-		   	  "level": "Fluent"
-		   },
-		   {
-		   	  "language": "Spanish",
-		   	  "level": "Intermediate"
-		   },
-		   {
-		   	  "language": "Russian",
-		   	  "level": "Basic"
-		   }		   		   
-		]
-	},
+	"skills": [
+	    {
+	   	  "title": "Web Technologies",
+	   	  "list": [ "AngularJS", "Bootstrap", "HTML5", "CSS3", "Less", "Node.js", "RESTful API (development & consumption)" ]
+	   	},
+	    {
+	   	  "title": "Coding Languages",
+	   	  "list": [ "JavaScript", "C#", "Perl 5", "Java", "Ruby (on Rails)" ]
+	   	},
+	    {
+	   	  "title": "Databases",
+	   	  "list": ["MySQL", "mongoDB", "MS SQL Server" ]
+	   	},
+	    {
+	   	  "title": "Web Servers",
+	   	  "list": ["IIS", "Apache", "Express"]
+	   	},
+	    {
+	   	  "title": "Spoken Languages",
+	   	  "list": [ "English (fluent)", "Spanish (proficient)", "Russian (basic)" ]
+	   	}	   		   		   	
+	],
 	"employmentHistory": [
 		{
 			"title": "Sr. Web Engineer",
@@ -130,6 +81,22 @@
 			]
 		}				
 	],
+	"education": [
+		{
+			"name": "Colorado State University",
+			"location": "Ft. Collins, CO",
+			"degrees": [
+			   {
+				  "type": "Bachelor of Arts",
+				  "major": "Anthropology, Spanish minor"
+			   },
+               {
+				  "type": "Master of Science",
+				  "major": "Business Administration, Computer Information Systems"
+			   }			   
+			]
+		}			
+	],	
 	"activities": [
 		{
 			"title": "Volunteer Mentor",
