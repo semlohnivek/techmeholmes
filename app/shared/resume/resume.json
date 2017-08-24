@@ -12,7 +12,7 @@
 	"skills": [
 	    {
 	   	  "title": "Web Technologies",
-	   	  "list": [ "AngularJS", "Bootstrap", "HTML5", "CSS3", "Less", "Node.js", "RESTful API (development & consumption)" ]
+	   	  "list": [ "AngularJS", "Bootstrap", "HTML5", "CSS3", "Sass", "Node.js", "RESTful API (development & consumption)" ]
 	   	},
 	    {
 	   	  "title": "Coding Languages",
@@ -33,6 +33,21 @@
 	],
 	"employmentHistory": [
 		{
+			"title": "Technology Engineer",
+			"employer": {
+				"name": "PNC Bank",
+				"city": "Pittsburgh",
+				"state": "PA"
+			},
+			"from": "July 2017",
+			"to": "Present",
+			"summary": "Automation developemnt for Enterprise Architecture team, largely focused on VMWare virtual machine build, deployment, and decommissioning.",
+			"highlights": [
+				"Front-end lead developer for in-house portal development to provide push-button virtual machine deployment.",
+				"Primarily using AngularJS with some customized ServiceNow modules."
+			]
+		},		
+		{
 			"title": "Sr. Web Engineer",
 			"employer": {
 				"name": "Visa Inc.",
@@ -40,7 +55,7 @@
 				"state": "CO"
 			},
 			"from": "August 2015",
-			"to": "Present",
+			"to": "February 2017",
 			"summary": "Mix of full-stack and strict front-end web development using AngularJS, Ruby on Rails, and MySQL for three different medium-scale web applications.",
 			"highlights": [
 				"Heavy use of open source JavaScript libraries including: AngularJS, jQuery, Angular UI, UI Router, and more.",
@@ -102,7 +117,7 @@
 			"title": "Volunteer Mentor",
 			"organization": "American Corporate Partners (ACP)",
 			"from": "January 2016",
-			"to": "Present",
+			"to": "January 2017",
 			"summary": "ACP is a service organization \"Connecting US Veterans to Business Leaders through Mentorships and Online Career Advice.\""
 		}
 	]
